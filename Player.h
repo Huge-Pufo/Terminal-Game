@@ -7,6 +7,7 @@ class Player {
     private:
         int x;
         int y;
+        Room * room;
 
     public:
         Player();
@@ -16,3 +17,5 @@ class Player {
         bool move(char direction, Room *room);
 
 }
+
+#endif
