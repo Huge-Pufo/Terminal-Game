@@ -10,6 +10,14 @@ Player::~Player() {
 
 }
 
+Player::getX() {
+    return this->x;
+}
+
+Player::getY() {
+    return this->y;
+}
+
 bool Player::move(char direction, Room * room) {
 
     if (direction == 'w') {

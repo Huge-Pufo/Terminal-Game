@@ -1,4 +1,5 @@
 #include "Room.h"
+#include "Player.h"
 #include <iostream>
 
 Room::Room(int x, int y, Player * player) {
@@ -18,9 +19,6 @@ Room::Room(int x, int y, Player * player) {
             }
         }
     }
-
-
-
 }
 
 Room::~Room() {
@@ -42,6 +40,9 @@ void Room::draw() {
 
     for (int outerCounter = 0; outerCounter < height; outerCounter++) {
         for (int innerCounter = 0; innerCounter < width; innerCounter++) {
+            if (this->player->getX() == innerCounter && this->player->getY() == outerCounter) {
+                std::cout "@";
+            }
             std::cout << this->map[outerCounter][innerCounter];
         }
         cout << endl;

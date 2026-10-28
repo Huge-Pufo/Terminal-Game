@@ -11,6 +11,8 @@ class Player {
     public:
         Player();
         ~Player();
+        getX();
+        getY();
         bool move(char direction, Room *room);
 
 }
