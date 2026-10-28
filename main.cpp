@@ -5,13 +5,10 @@
 int main () {
 
     Player * player;
-    Room * room;
+    Room room(5, 10)
 
-    bool isRunning = true;
+    room.draw()
 
-    while (isRunning) {
-
-    }
 
     return 0;
 }

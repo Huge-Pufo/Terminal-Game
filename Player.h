@@ -1,5 +1,7 @@
-#include "Room.h"
+#ifndef PLAYER_H
+#define PLAYER_H
 
+class Room;
 
 class Player {
     private:
@@ -7,6 +9,8 @@ class Player {
         int y;
 
     public:
-        bool move(char keys, Room *room);
+        Player();
+        ~Player();
+        bool move(char direction, Room *room);
 
 }

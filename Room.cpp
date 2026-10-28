@@ -1,14 +1,14 @@
 #include "Room.h"
 #include <iostream>
 
-Room::Room(int x, int y) {
+Room::Room(int x, int y, Player * player) {
 
-    this->map = new char*[y];
     this->height = y;
     this->width = x;
+    this->map = new char*[y];
 
     for (int outerCounter = 0; outerCounter < y; outerCounter++) {
-        this->map[counter] = new char[x][y];
+        this->map[outerCounter] = new char[x];
 
         for (int innerCounter = 0; innerCounter < x; innerCounter++) {
             if ((outerCounter == 0) || outerCounter == (y - 1) || (innerCounter == 0) || innerCounter == (x - 1)) {
@@ -24,19 +24,28 @@ Room::Room(int x, int y) {
 }
 
 Room::~Room() {
+}
+
+Room::canMove() {
+    if (map[y][x] != '#') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+void Room::draw() {
 
     this->width = x;
     this->height = y;
 
     for (int outerCounter = 0; outerCounter < height; outerCounter++) {
-        this->map[counter] = new char[width];
         for (int innerCounter = 0; innerCounter < width; innerCounter++) {
-            this->map[outerCounter][innerCounter] = ' ';
+            std::cout << this->map[outerCounter][innerCounter];
         }
+        cout << endl;
     }
 
 }
 
-void Room::draw() {
-
-}

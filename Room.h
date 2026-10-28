@@ -1,5 +1,7 @@
 #include "Room.h"
 
+class Player;
+
 class Room {
     private:
         Player * player;
@@ -10,7 +12,8 @@ class Room {
         int height;
 
     public:
-        Room(int x, int y);
+        Room(int x, int y, Player * player);
         ~Room();
         void draw();
+        bool canMove(int x, int y);
 }
